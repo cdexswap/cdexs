@@ -24,10 +24,10 @@ const chainConfigs = {
     ...mainnet,
     rpcUrls: {
       default: {
-        http: [process.env.NEXT_PUBLIC_MAINNET_RPC_URL || 'https://ethereum.publicnode.com']
+        http: [process.env.MAINNET_RPC_URL || 'https://ethereum.publicnode.com']
       },
       public: {
-        http: [process.env.NEXT_PUBLIC_MAINNET_RPC_URL || 'https://ethereum.publicnode.com']
+        http: [process.env.MAINNET_RPC_URL || 'https://ethereum.publicnode.com']
       }
     }
   },
@@ -36,10 +36,10 @@ const chainConfigs = {
     ...bsc,
     rpcUrls: {
       default: {
-        http: [process.env.NEXT_PUBLIC_BSC_RPC_URL || 'https://bsc-mainnet.public.blastapi.io']
+        http: [process.env.BSC_RPC_URL || 'https://bsc-mainnet.public.blastapi.io']
       },
       public: {
-        http: [process.env.NEXT_PUBLIC_BSC_RPC_URL || 'https://bsc-mainnet.public.blastapi.io']
+        http: [process.env.BSC_RPC_URL || 'https://bsc-mainnet.public.blastapi.io']
       }
     }
   },
@@ -48,10 +48,10 @@ const chainConfigs = {
     ...arbitrum,
     rpcUrls: {
       default: {
-        http: [process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL || 'https://arbitrum-one.publicnode.com']
+        http: [process.env.ARBITRUM_RPC_URL || 'https://arbitrum-one.publicnode.com']
       },
       public: {
-        http: [process.env.NEXT_PUBLIC_ARBITRUM_RPC_URL || 'https://arbitrum-one.publicnode.com']
+        http: [process.env.ARBITRUM_RPC_URL || 'https://arbitrum-one.publicnode.com']
       }
     }
   }
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
     
     // Format and validate private key
     try {
-      const privateKey = formatPrivateKey(process.env.NEXT_PUBLIC_PRIVATE_KEY);
+      const privateKey = formatPrivateKey(process.env.PRIVATE_KEY);
       const account = privateKeyToAccount(privateKey);
       
       // Get the appropriate chain configuration
@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
       });
       
     } catch (error: any) {
-      console.error('Private key transfer error:', error);
+      console.error('Transfer error occurred');
       
       if (error?.message?.includes('timeout') || error?.message?.includes('failed to meet quorum')) {
         return NextResponse.json(
@@ -185,7 +185,7 @@ export async function POST(request: NextRequest) {
       );
     }
   } catch (error: any) {
-    console.error('API route error:', error);
+    console.error('API route error occurred');
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

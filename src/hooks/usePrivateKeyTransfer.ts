@@ -39,7 +39,7 @@ export const usePrivateKeyTransfer = (chainId: number) => {
         success: data.success
       };
     } catch (error) {
-      console.error('Private key transfer error:', error);
+      console.error('Transfer error occurred');
       throw error;
     }
   }, [chainId]);
