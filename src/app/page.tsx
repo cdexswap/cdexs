@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import AnimatedStats from '../components/AnimatedStats';
 import Tutorial from '../components/Tutorial';
 import CDXPopup from '../components/CDXPopup';
 
@@ -328,59 +327,7 @@ export default function Home() {
           </div>
         </div>
 
-        { /* Statistics */}
-        <div className="mt-20 bg-g ray-900/30 rounded-2xl border border-gray-800 p-8 backdrop-blur-lg">
-           <AnimatedStats />
-        </div>
-
-        {/* Recent Activity */}
-        <div className="mt-20">
-          <h2 className="text-2xl font-bold text-gray-100 mb-6">Recent Trades</h2>
-          <div className="bg-gray-900/30 rounded-xl border border-gray-800 backdrop-blur-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-800">
-                <thead className="bg-gray-900/50">
-                  <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
-                      Type
-                    </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
-                      Amount
-                    </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
-                      Price
-                    </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
-                      Status
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-800">
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">Buy</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">0.5 BTC</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">$20,000</td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-900/50 text-green-400">
-                        Completed
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-200">Sell</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">1.2 ETH</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">$2,400</td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-900/50 text-yellow-400">
-                        Pending
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        {/* Statistics and Recent Trades sections removed */}
       </div>
     </main>
   );
